@@ -1,4 +1,4 @@
-package com.across.demo;
+package com.across.demo.app;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
