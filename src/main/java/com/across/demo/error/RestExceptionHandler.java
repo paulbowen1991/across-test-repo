@@ -21,16 +21,16 @@ import javax.servlet.http.HttpServletRequest;
 @ControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
-   @Override
-   protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
-       String error = "Malformed JSON request";
-       System.out.println("HERE");
-       return buildResponseEntity(new ApiError(HttpStatus.BAD_REQUEST, error, ex));
-   }
+    @Override
+    protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+        String error = "Malformed JSON request";
+        System.out.println("HERE");
+        return buildResponseEntity(new ApiError(HttpStatus.BAD_REQUEST, error, ex));
+    }
 
-   private ResponseEntity<Object> buildResponseEntity(ApiError apiError) {
-       return new ResponseEntity<>(apiError, apiError.getStatus());
-   }
+    private ResponseEntity<Object> buildResponseEntity(ApiError apiError) {
+        return new ResponseEntity<>(apiError, apiError.getStatus());
+    }
 
     @ExceptionHandler(Exception.class)
     protected ResponseEntity<Object> internalServerError(

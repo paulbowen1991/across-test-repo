@@ -16,7 +16,7 @@ public class AuctionController {
 
     @GetMapping("/auction")
     public Double defaultAuction(@RequestParam(value = "price_floor", defaultValue = "1") @Valid Double priceFloor,
-                                 @RequestParam(value = "currency", defaultValue = "EUR")  @Valid String currency) throws JSONException, IOException, InterruptedException {
+                                 @RequestParam(value = "currency", defaultValue = "EUR") @Valid String currency) throws JSONException, IOException, InterruptedException {
         return converter.convert(priceFloor, currency);
     }
 

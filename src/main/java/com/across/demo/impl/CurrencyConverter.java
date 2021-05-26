@@ -10,7 +10,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class CurrencyConverter {
-    private static String API_KEY = "80652bd029597f9f0985945db3fc6fde";
+    private static String API_KEY = "undefined";
     private static String DEFAULT_CURRENCY = "USD";
 
     public Double convert(Double priceFloor, String currency) throws IOException, InterruptedException, JSONException {
